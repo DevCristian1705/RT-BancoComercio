@@ -1,0 +1,88 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="bg-card">
+        <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+            <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8">
+                <!-- Avatar and name -->
+                <div class="flex flex-auto items-center min-w-0">
+                    <div class="flex flex-col min-w-0">
+                        <div class="text-4xl font-extrabold tracking-tight leading-none">Lista de cargos</div>
+                    </div>
+                </div>
+                <!-- Actions -->
+                <div class="flex items-center mt-6 sm:mt-0 sm:ml-2 space-x-3">
+                    <div>
+                        <mat-form-field class="fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded min-w-50">
+                            <button mat-icon-button type="button" matPrefix (click)="onRefresh()">
+                                <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:x'"></mat-icon>
+                            </button>
+                            <input matInput [autocomplete]="'off'" [placeholder]="'Buscar por nombre... '"
+                                matTooltip="Presione Enter para buscar" [(ngModel)]="nombreCargo"
+                                (keyup.enter)="onLoadTableCargo()">
+                        </mat-form-field>
+                    </div>
+                    <button class="fuse-mat-button-rounded" mat-flat-button [color]="'primary'" (click)="onAddCargo()">
+                        <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:document-add'"></mat-icon>
+                        <span class="ml-2">Nuevo Cargo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="flex flex-col p-2 pb-4 bg-card rounded-2xl shadow overflow-hidden">
+            <div class="example-container" *ngIf="!tableCargo.empty">
+                <div class="flex">
+                    <table mat-table [dataSource]="tableCargo.content" multiTemplateDataRows>
+
+                        <ng-container matColumnDef="codigoCargo">
+                            <th mat-header-cell *matHeaderCellDef> Codigo </th>
+                            <td mat-cell *matCellDef="let element">
+                                <span class="pr-6 whitespace-nowrap">
+                                    {{element.codigoCargo}}
+                                </span>
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="nombreCargo">
+                            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                            <td mat-cell *matCellDef="let element">
+                                <span class="pr-6 whitespace-nowrap">
+                                    {{element.nombreCargo}}
+                                </span>
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="accion">
+                            <th mat-header-cell *matHeaderCellDef class="width-action"> Acciones </th>
+                            <td mat-cell *matCellDef="let element" class="width-action">
+                                <button mat-icon-button (click)="onEditCargo(element)" matTooltip="Editar registro">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)="onDeleteCargo(element.idCargo)"
+                                    matTooltip="Eliminar registro">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef=" displayedColumnsCargo"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumnsCargo;"></tr>
+                    </table>
+                </div>
+
+                <mat-paginator [length]="tableCargo.totalElements" [pageSize]="tableCargo.size"
+                    [pageSizeOptions]="[5,10,15,20]" showFirstLastButtons (page)="onChangePagination($event)">
+                </mat-paginator>
+            </div>
+            <div *ngIf="tableCargo.empty">
+                <div class="text-3xl pt-2 font-semibold tracking-tight text-center">¡No hay datos!</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,119 @@
+  <!-- Drawer content -->
+  <div class="flex flex-col overflow-hidden w-full">
+
+      <!-- Header -->
+      <div
+          class="flex flex-0 items-center py-2 pl-4 pr-6 sm:py-4 md:pl-6 md:pr-8 border-b lg:border-b-0 bg-card dark:bg-transparent">
+          <!-- Title & Actions -->
+          <button mat-icon-button [routerLink]="['..']">
+              <mat-icon [svgIcon]="'heroicons_outline:arrow-sm-left'"></mat-icon>
+          </button>
+          <h2 class="ml-2.5 text-md sm:text-xl font-medium tracking-tight truncate">
+              Regresar
+          </h2>
+      </div>
+
+      <!-- Main -->
+      <div class="flex-auto overflow-y-auto" cdkScrollable>
+
+          <!-- Steps -->
+          <mat-tab-group class="fuse-mat-no-header">
+              <ng-container>
+                  <mat-tab>
+                      <ng-template matTabContent>
+                          <div
+                              class="prose prose-sm max-w-6xl mx-auto lg:mt-4 p-6 sm:p-10  rounded-2xl shadow overflow-hidden bg-card">
+
+                              <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 ">
+                                  <!-- Avatar and name -->
+                                  <div class="flex flex-auto items-center min-w-0">
+
+                                      <div class="flex flex-col min-w-0">
+                                          <ng-container>
+                                              <div
+                                                  class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug truncate">
+                                                  welcome-back, Brian!</div>
+                                          </ng-container>
+                                          <div class="flex items-center">
+                                              <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:bell'">
+                                              </mat-icon>
+                                              <div class="ml-1.5 leading-6 truncate text-secondary">You have 2 new
+                                                  messages and 15 new tasks
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- Actions -->
+                                  <div class="flex items-center mt-6 sm:mt-0 sm:ml-2 space-x-3">
+                                      <button class="fuse-mat-button-rounded bg-accent-700" mat-flat-button
+                                          [color]="'accent'">
+                                          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:mail'"></mat-icon>
+                                          <span class="ml-2">Mensajes</span>
+                                      </button>
+                                      <button class="fuse-mat-button-rounded" mat-flat-button [color]="'primary'">
+                                          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:cog'"></mat-icon>
+                                          <span class="ml-2">Solicitar</span>
+                                      </button>
+                                  </div>
+                              </div>
+
+                              <p>
+                                  Blanditiis, fugit voluptate! Assumenda blanditiis consectetur, labque cupiditate
+                                  ducimus eaque earum, fugiat illum
+                                  ipsa, necessitatibus omnis quaerat reiciendis totam. Architecto,
+                                  <strong>facere</strong> illum molestiae nihil nulla
+                                  quibusdam quidem vel! Atque <em>blanditiis deserunt</em>.
+                              </p>
+                              <p>
+                                  Debitis deserunt doloremque labore laboriosam magni minus odit:
+                              </p>
+                              <ol>
+                                  <li>Asperiores dicta esse maiores nobis officiis.</li>
+                                  <li>Accusamus aliquid debitis dolore illo ipsam molettiae possimus.</li>
+                                  <li>Magnam mollitia pariatur perspiciatis quasi quidem tenetur voluptatem! Adipisci
+                                      aspernatur assumenda dicta.</li>
+                              </ol>
+                              <p>
+                                  Animi fugit incidunt iure magni maiores molestias.
+                              </p>
+
+                              <h3>
+                                  Enlaces de referencia
+                              </h3>
+
+                              <ol>
+                                  <li><a>Asperiores dicta esse maiores nobis officiis.</a></li>
+                                  <li><a>Accusamus aliquid debitis dolore illo ipsam molettiae possimus.</a></li>
+                                  <li><a>Magnam mollitia pariatur perspiciatis quasi quidem tenetur voluptatem! Adipisci
+                                          aspernatur assumenda dicta.</a></li>
+                              </ol>
+
+                              <h3>
+                                  Imagenes adjuntos
+                              </h3>
+
+                              <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+                                  <div class="flex h-80">
+                                      <img class="rounded object-cover img-not-margin"
+                                          src="https://vader.news/__export/1590587024538/sites/gadgets/img/2020/05/27/naruto-dc00879c6a4831911dfcee78b59e6fbc-1200x800.jpg_1902800913.jpg"
+                                          alt="Card cover image">
+                                  </div>
+                                  <div class="flex h-80">
+                                      <img class="rounded object-cover img-not-margin"
+                                          src="https://frikigamers.com/wp-content/uploads/2016/12/hollywood-hara-una-pelicula-naruto-frikigamers.com_.png"
+                                          alt="Card cover image">
+                                  </div>
+                                  <div class="flex h-80">
+                                      <img class="rounded object-cover img-not-margin"
+                                          src="https://i.blogs.es/7436bd/descarga/840_560.jpeg" alt="Card cover image">
+                                  </div>
+                              </div>
+
+                          </div>
+                      </ng-template>
+                  </mat-tab>
+              </ng-container>
+          </mat-tab-group>
+      </div>
+
+  </div>

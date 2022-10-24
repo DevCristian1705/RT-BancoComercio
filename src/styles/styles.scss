@@ -1,0 +1,140 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+ 
+
+.bg-white{
+  background-color: white;
+}
+
+//*CONTAINER
+.encabezado{
+  background-image: url('/assets/images/landing.PNG'); 
+  background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+//** LOGIN
+.Login_olvidoContraseña{
+  text-align: right;
+  display: block;
+  padding-bottom: 10%;
+}
+//** LANADING
+.Landing{
+  margin: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  padding: 2%;
+
+  .Nav{
+    display: flex;
+  }
+  
+}
+
+.Landing_H2, .Landing_Ptitulo, .Landing_pGrilla{
+  font-weight: bold;
+}
+
+.Landing_H2, .Landing_Ptitulo{
+  font-size: 45px;
+}
+
+.Landing_Ptitulo{
+  font-size: 38px;
+}
+.Landing_pGrilla{
+  font-size: 30px;
+}
+
+.Landing_pGrilla2{
+  font-size: 28px;
+}
+
+
+.Landing_lognavbar{
+  width: 150px; 
+}
+
+.Landing_marginInfo{
+  padding: 20% 15%;
+}
+
+.Landing_marginImage{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  img{
+    height: 95%;
+    width: 280px;
+  }
+}
+
+.grilla{
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); 
+  grid-gap: 50px;
+  text-align: center;
+  padding: 5%;
+  grid-auto-rows: auto; 
+  justify-content: center;
+  img{
+    width: 100px;
+    height: 100px;
+    display:inline;
+  }
+}
+
+.Landing_marginInfo2{
+  padding: 10% 15%;
+}
+
+.grilla3{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
+  
+  .Sub_grilla{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 100px;
+    padding: 10% 0; 
+
+    
+    @media (max-width : 700px){
+      display: block;
+      padding: 2%;
+      text-align: center;
+    }
+
+    
+    .Sub_grilla2{
+      display: grid;
+      grid-template-columns: 60px 150px; 
+      padding: 1%;
+
+      @media (max-width : 700px){
+        display: block;
+        padding: 0 5% ; 
+      }
+
+    }
+    img{
+      width: 100px;
+      height: 60px;
+      display:inline;
+    } 
+  }
+
+}
+
+
+//**GENERALES
+
+.centrar{
+  text-align: center;
+}
+
+ 

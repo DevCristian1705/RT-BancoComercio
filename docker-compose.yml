@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api:
+    container_name: timesheet-frontend
+    image: timesheet-frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 81:81
+    restart: always
